@@ -288,7 +288,7 @@ void sys_led_show(void) {
 
     if (host_keyboard_led_state().caps_lock) {
         led_side = RIGHT_SIDE;
-        set_side_rgb(LEFT_SIDE + SYS_MARK, current_rgb.r, current_rgb.g, current_rgb.b);
+        set_side_rgb(LEFT_SIDE + SYS_MARK, 0xFF, 0x00, 0x00);
     }
 
     if (user_config.numlock_state != 1) { return; }
@@ -742,7 +742,7 @@ void caps_word_show(void) {
     if (game_mode_enable || !user_config.caps_word_enable) { return; }
     if (is_caps_word_on()) {
         rgb_required = 2;
-        rgb_matrix_set_color(CAPS_LED, RGB_CYAN);
+        rgb_matrix_set_color(CAPS_LED, RGB_RED);
     }
 }
 
